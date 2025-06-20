@@ -1,0 +1,210 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 220 13% 10%; /* Dark Charcoal */
+    --foreground: 210 20% 85%; /* Light Gray */
+
+    --card: 220 13% 15%; /* Slightly Lighter Dark Charcoal for cards */
+    --card-foreground: 210 20% 85%; /* Light Gray */
+
+    --popover: 220 13% 12%;
+    --popover-foreground: 210 20% 85%;
+
+    --primary: 0 72% 51%; /* Red Accent */
+    --primary-foreground: 0 0% 98%; /* White/Very Light Gray for text on primary */
+
+    --secondary: 220 13% 25%; /* Medium Dark Gray for secondary elements */
+    --secondary-foreground: 210 20% 90%; /* Lighter text for secondary */
+
+    --muted: 220 13% 20%;
+    --muted-foreground: 210 15% 60%; /* Muted text color */
+
+    --accent: 0 72% 51%; /* Red Accent (can be same as primary for this theme) */
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 63% 51%; /* Destructive Red (similar to primary for consistency) */
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 13% 22%; /* Subtle border color */
+    --input: 220 13% 20%;
+    --ring: 0 72% 51%; /* Red Accent for rings */
+
+    --chart-1: 0 72% 51%; /* Red */
+    --chart-2: 210 70% 60%; /* Blue */
+    --chart-3: 120 50% 55%; /* Green */
+    --chart-4: 45 80% 60%; /* Yellow / Orange */
+    --chart-5: 260 70% 65%; /* Purple */
+    --radius: 0.5rem;
+
+    /* Sidebar specific colors */
+    --sidebar-background: 220 13% 12%; /* Darker than card, almost like popover */
+    --sidebar-foreground: 210 20% 80%;
+    --sidebar-primary: 0 72% 51%; /* Red accent for active items */
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 220 13% 20%; /* Hover color for sidebar items */
+    --sidebar-accent-foreground: 210 20% 95%;
+    --sidebar-border: 220 13% 18%;
+    --sidebar-ring: 0 72% 51%;
+
+    /* Status Colors - Keep functional, adjust for dark theme if needed */
+    --status-healthy: 120 40% 45%; /* Green (slightly darker for dark theme) */
+    --status-healthy-foreground: 120 40% 90%;
+    
+    --status-warning-orange: 36 90% 55%; /* Orange */
+    --status-warning-orange-foreground: 36 90% 10%; 
+    
+    --status-warning: 45 90% 55%; /* Yellow */
+    --status-warning-foreground: 45 90% 10%;
+    
+    --status-critical: 0 70% 55%; /* Red (consistent with primary) */
+    --status-critical-foreground: 0 70% 95%;
+    
+    --status-unknown: 210 10% 40%; /* Muted Gray */
+    --status-unknown-foreground: 0 0% 80%;
+  }
+
+  /* Explicitly define .dark styles, though :root will act as dark by default now */
+  .dark {
+    --background: 220 13% 10%;
+    --foreground: 210 20% 85%;
+    --card: 220 13% 15%;
+    --card-foreground: 210 20% 85%;
+    --popover: 220 13% 12%;
+    --popover-foreground: 210 20% 85%;
+    --primary: 0 72% 51%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 220 13% 25%;
+    --secondary-foreground: 210 20% 90%;
+    --muted: 220 13% 20%;
+    --muted-foreground: 210 15% 60%;
+    --accent: 0 72% 51%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 63% 51%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 13% 22%;
+    --input: 220 13% 20%;
+    --ring: 0 72% 51%;
+
+    --sidebar-background: 220 13% 12%;
+    --sidebar-foreground: 210 20% 80%;
+    --sidebar-primary: 0 72% 51%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 220 13% 20%;
+    --sidebar-accent-foreground: 210 20% 95%;
+    --sidebar-border: 220 13% 18%;
+    --sidebar-ring: 0 72% 51%;
+
+    --status-healthy: 120 40% 45%;
+    --status-healthy-foreground: 120 40% 90%;
+    --status-warning-orange: 36 90% 55%;
+    --status-warning-orange-foreground: 36 90% 10%;
+    --status-warning: 45 90% 55%; 
+    --status-warning-foreground: 45 90% 10%;
+    --status-critical: 0 70% 55%;
+    --status-critical-foreground: 0 70% 95%;
+    --status-unknown: 210 10% 40%;
+    --status-unknown-foreground: 0 0% 80%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .bg-status-healthy { background-color: hsl(var(--status-healthy)); }
+  .text-status-healthy-foreground { color: hsl(var(--status-healthy-foreground)); }
+  .border-status-healthy { border-color: hsl(var(--status-healthy)); }
+
+  .bg-status-warning-orange { background-color: hsl(var(--status-warning-orange)); }
+  .text-status-warning-orange-foreground { color: hsl(var(--status-warning-orange-foreground)); }
+  .border-status-warning-orange { border-color: hsl(var(--status-warning-orange)); }
+
+  .bg-status-warning { background-color: hsl(var(--status-warning)); }
+  .text-status-warning-foreground { color: hsl(var(--status-warning-foreground)); }
+  .border-status-warning { border-color: hsl(var(--status-warning)); }
+
+  .bg-status-critical { background-color: hsl(var(--status-critical)); }
+  .text-status-critical-foreground { color: hsl(var(--status-critical-foreground)); }
+  .border-status-critical { border-color: hsl(var(--status-critical)); }
+
+  .bg-status-unknown { background-color: hsl(var(--status-unknown)); }
+  .text-status-unknown-foreground { color: hsl(var(--status-unknown-foreground)); }
+  .border-status-unknown { border-color: hsl(var(--status-unknown)); }
+}
+
+@keyframes batteryPulseGlow {
+  0%, 100% { 
+    transform: scale(1); 
+    opacity: 0.8; 
+    filter: drop-shadow(0 0 3px hsl(var(--primary) / 0.5)) drop-shadow(0 0 6px hsl(var(--primary) / 0.3));
+  }
+  50% { 
+    transform: scale(1.03); 
+    opacity: 1; 
+    filter: drop-shadow(0 0 6px hsl(var(--primary) / 0.7)) drop-shadow(0 0 12px hsl(var(--primary) / 0.5));
+  }
+}
+
+@keyframes boltFlicker {
+  0%, 100% { opacity: 0.6; }
+  20% { opacity: 1; }
+  40% { opacity: 0.7; }
+  60% { opacity: 1; filter: drop-shadow(0 0 3px hsl(var(--primary-foreground) / 0.7));}
+  80% { opacity: 0.5; }
+}
+
+@keyframes drawCircuitLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes pulseCircuitDot {
+  0%, 100% { opacity: 0.2; transform: scale(0.7); }
+  50% { opacity: 1; transform: scale(1); filter: drop-shadow(0 0 3px hsl(var(--primary) / 0.6));}
+}
+
+@keyframes fadeInOutSlow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.animate-battery-pulse-glow {
+  animation: batteryPulseGlow 2s infinite ease-in-out;
+}
+
+.animate-bolt-flicker {
+  animation: boltFlicker 1.5s infinite steps(1, end);
+}
+
+.circuit-line {
+  animation: drawCircuitLine 1s ease-out forwards; 
+}
+
+.circuit-dot {
+  opacity: 0; 
+  animation: pulseCircuitDot 1.5s infinite ease-in-out; /* Changed to infinite and adjusted duration */
+}
+.circuit-dot.decorative-dot { 
+   animation-duration: 1.2s; /* Already infinite via .circuit-dot or its own if specified */
+   animation-iteration-count: infinite; /* Explicitly ensure infinite */
+}
+
+
+.animate-fadeInOutSlow {
+  animation: fadeInOutSlow 2s infinite ease-in-out;
+}

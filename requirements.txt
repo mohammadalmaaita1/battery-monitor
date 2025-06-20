@@ -1,0 +1,7 @@
+
+Flask
+Flask-CORS
+mariadb
+# smbus (typically pre-installed or installed via apt on Raspberry Pi OS, e.g., python3-smbus)
+
+    
