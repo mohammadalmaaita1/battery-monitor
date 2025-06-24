@@ -256,12 +256,14 @@ def voltage_stream():
                 for reading in current_readings_stream:
                     insert_voltage_reading(reading['cell'], reading['voltage'])
                 
+                # The frontend will now correctly handle `null` for voltage, so we send it as is.
+                # This prevents the frontend from flickering to 0.0V on a transient read error.
                 sse_payload_readings = []
                 for r in current_readings_stream:
                     sse_payload_readings.append({
                         'cell': r['cell'],
                         'ain_channel': r['ain_channel'],
-                        'voltage': r['voltage'] if r['voltage'] is not None else 0.0 
+                        'voltage': r['voltage'] # Send null as is
                     })
                 
                 data_payload = {
