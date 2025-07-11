@@ -203,10 +203,8 @@ Install Genkit SDK
 
 ## 🔖 Tags
 
----
-
-إذا بدك أحولها لملف `.md` مباشر أو أجهزلك نسخة PDF/Word جاهزة للطباعة أو العرض، بس احكيلي.
-
+--
+#BatteryMonitor #IoT #RaspberryPi #LithiumIon #Flask #NextJS #MariaDB #GoogleGemini #BMS #AI #EngineeringProject #ElectricalEngineering #ZUJ
 
 
 
