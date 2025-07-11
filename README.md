@@ -3,7 +3,7 @@
 
 ## 1. Project Overview
 
-**Project Name:** Battery Monitor
+**Project Name:** Design of Battery Logging System using IoT
 
 **Core Purpose:**
 The Battery Monitor is a comprehensive system designed for real-time monitoring, logging, and diagnostics of multi-cell lithium battery packs. It aims to provide users with detailed insights into battery health, performance, and potential issues, leveraging both direct hardware measurements from a Raspberry Pi and AI-powered analysis.
